@@ -1,38 +1,42 @@
-import { LandingSection } from "@/components/landing-section";
-import { ProjectsSection } from "@/components/projects-section";
-import { ContactSection } from "@/components/contact-section";
-import { Footer } from "@/components/footer";
-import { projects } from "@/data/projects";
+import Link from "next/link";
+import { Github, Linkedin, Mail, Download } from "lucide-react";
 
 export default function Home() {
   return (
-    // Use h-screen and overflow-hidden to contain everything within the viewport
-    <div className="flex flex-col h-screen overflow-hidden bg-background">
-      {/* Main Content takes up available space, flex used to position sections */}
-      <main className="flex-grow flex flex-col md:flex-row overflow-hidden">
-        {/* Left Side: Landing Section */}
-        <div className="w-full md:w-1/3 flex flex-col justify-center items-center p-4 md:p-8 bg-background text-foreground overflow-y-auto">
-           <LandingSection />
+    // Center content vertically and horizontally, take full screen height
+    <main className="flex flex-col items-center justify-center h-screen bg-background text-foreground p-4 md:p-8 text-center">
+      <div className="max-w-3xl mx-auto space-y-6 md:space-y-8">
+        {/* Headline */}
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+          My name is Tarun, I’m a Software Developer working and living in Toronto.
+        </h1>
+
+        {/* Paragraph 1 */}
+        <p className="text-lg md:text-xl text-foreground/80">
+          I am passionate about building robust and scalable web applications. I have experience working with various technologies in both frontend and backend development.
+        </p>
+
+        {/* Paragraph 2 */}
+        <p className="text-lg md:text-xl text-foreground/80">
+          I believe that the success of a project is based on good collaboration, clean code, and a focus on user experience.
+        </p>
+
+        {/* Links */}
+        <div className="flex items-center justify-center space-x-4 md:space-x-6 pt-4">
+          <Link href="/resume.pdf" download="Tarun_Resume.pdf" className="text-sm text-foreground/80 hover:text-primary transition-colors flex items-center gap-1" aria-label="Download Resume">
+             <Download className="h-4 w-4" /> Resume
+          </Link>
+          <Link href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/80 hover:text-primary transition-colors flex items-center gap-1" aria-label="GitHub Profile">
+             <Github className="h-4 w-4" /> GitHub
+          </Link>
+          <Link href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/80 hover:text-primary transition-colors flex items-center gap-1" aria-label="LinkedIn Profile">
+            <Linkedin className="h-4 w-4" /> LinkedIn
+          </Link>
+          <Link href="mailto:your.email@example.com" className="text-sm text-foreground/80 hover:text-primary transition-colors flex items-center gap-1" aria-label="Send Email">
+             <Mail className="h-4 w-4" /> Mail
+          </Link>
         </div>
-
-        {/* Right Side: Projects and Contact/Footer */}
-        <div className="w-full md:w-2/3 flex flex-col bg-primary text-primary-foreground overflow-y-auto">
-           {/* Projects section */}
-           <div className="flex-grow p-4 md:p-8">
-            <ProjectsSection projects={projects} />
-           </div>
-
-           {/* Contact section - integrated below projects */}
-           <div className="p-4 md:p-8 border-t border-primary-foreground/20">
-            <ContactSection />
-           </div>
-
-           {/* Footer at the bottom of the right section */}
-           <div className="mt-auto bg-primary text-primary-foreground"> {/* Ensure footer stays within navy */}
-             <Footer />
-           </div>
-        </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

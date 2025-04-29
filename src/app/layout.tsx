@@ -24,10 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    // Ensure html takes full height
     <html lang="en" className="h-full">
       <body
-        // Ensure body takes full height and prevents its own scroll, deferring to html
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground h-full overflow-hidden`}
+        // Remove overflow-hidden from body, ensure it takes full height
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground h-full`}
       >
         {children}
         <Toaster /> {/* Add Toaster here */}
