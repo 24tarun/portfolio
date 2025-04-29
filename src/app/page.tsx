@@ -8,17 +8,17 @@ export default function Home() {
       <div className="max-w-3xl mx-auto space-y-6 md:space-y-8">
         {/* Headline - Ensure foreground color (white) is applied */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-foreground">
-          My name is Tarun, I’m a Software Developer working and living in Toronto.
+          Hello, I am Tarun
         </h1>
 
         {/* Paragraph 1 - Use text-foreground/90 for slightly less bright white */}
         <p className="text-lg md:text-xl text-foreground/90">
-          I am passionate about building robust and scalable web applications. I have experience working with various technologies in both frontend and backend development.
+          I'm currently a masters student at Saarland University. I use this website as a portfolio and also to host and test a few of my projects
         </p>
 
         {/* Paragraph 2 - Use text-foreground/90 */}
         <p className="text-lg md:text-xl text-foreground/90">
-          I believe that the success of a project is based on good collaboration, clean code, and a focus on user experience.
+          Below you will find some useful links
         </p>
 
         {/* Links - Ensure links are white and hover state uses accent color */}
