@@ -1,4 +1,4 @@
-# **App Name**: Tarun's Trove
+# **App Name**: TarunHariharan
 
 ## Core Features:
 
