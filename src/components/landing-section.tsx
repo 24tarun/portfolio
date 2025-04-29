@@ -12,7 +12,11 @@ export function LandingSection() {
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center space-y-8">
         {/* Headline */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight leading-tight max-w-3xl">
-          Hi, I’m <span className="text-primary">Tarun</span>. I use this website as a portfolio and to showcase my projects.
+          Hi, I’m <span className="text-primary">Tarun</span>.
+          {/* Make the second part smaller and less bold */}
+          <span className="font-normal text-2xl md:text-3xl lg:text-4xl text-foreground/80 block mt-2">
+            I use this website as a portfolio and to showcase my projects.
+          </span>
         </h1>
         {/* Sub-headline/description */}
         <p className="text-lg md:text-xl text-foreground/80 max-w-xl">
