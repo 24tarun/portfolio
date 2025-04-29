@@ -48,21 +48,20 @@ export function ContactSection() {
   async function onSubmit(data: FormData) {
     setIsSubmitting(true);
     try {
-      // Call the server action
       const result = await sendContactMessage(data);
 
       if (result.success) {
         toast({
           title: "Message Sent!",
           description: "Thank you for reaching out. I'll get back to you soon.",
+          // Use default toast style which should adapt based on theme
         });
-        form.reset(); // Reset form fields
+        form.reset();
       } else {
-        // Handle potential errors from the server action (though basic action just returns success)
         toast({
           title: "Error",
           description: result.error || "Failed to send message. Please try again.",
-          variant: "destructive",
+          variant: "destructive", // Destructive variant for errors
         });
       }
     } catch (error) {
@@ -78,8 +77,9 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-16 md:py-24">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12">
+    // Section now assumes a navy background from parent
+    <section id="contact" className="py-16 md:py-24 lg:py-32">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-primary-foreground mb-12 md:mb-16">
         Get In Touch
       </h2>
       <div className="max-w-xl mx-auto">
@@ -91,10 +91,17 @@ export function ContactSection() {
                 name="firstName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>First Name</FormLabel>
+                    {/* Label text should be white on navy background */}
+                    <FormLabel className="text-primary-foreground/80">First Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="John" {...field} className="bg-secondary border-accent focus:ring-primary" />
+                      {/* Input: White background, Navy text, Navy ring on focus */}
+                      <Input
+                        placeholder="John"
+                        {...field}
+                        className="bg-background text-foreground border-border focus:ring-primary"
+                      />
                     </FormControl>
+                    {/* Message styling should adapt, destructive variant handles error color */}
                     <FormMessage />
                   </FormItem>
                 )}
@@ -104,9 +111,13 @@ export function ContactSection() {
                 name="lastName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Last Name</FormLabel>
+                     <FormLabel className="text-primary-foreground/80">Last Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Doe" {...field} className="bg-secondary border-accent focus:ring-primary" />
+                       <Input
+                        placeholder="Doe"
+                        {...field}
+                        className="bg-background text-foreground border-border focus:ring-primary"
+                       />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -118,13 +129,13 @@ export function ContactSection() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email Address</FormLabel>
+                   <FormLabel className="text-primary-foreground/80">Email Address</FormLabel>
                   <FormControl>
                     <Input
                       type="email"
                       placeholder="john.doe@example.com"
                       {...field}
-                      className="bg-secondary border-accent focus:ring-primary"
+                      className="bg-background text-foreground border-border focus:ring-primary"
                     />
                   </FormControl>
                   <FormMessage />
@@ -136,22 +147,27 @@ export function ContactSection() {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Message</FormLabel>
+                   <FormLabel className="text-primary-foreground/80">Message</FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Your message here..."
                       {...field}
                       rows={5}
-                      className="bg-secondary border-accent focus:ring-primary"
+                      className="bg-background text-foreground border-border focus:ring-primary"
                     />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <div className="text-center">
-              <Button type="submit" disabled={isSubmitting} className="bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 w-full md:w-auto px-8 py-3">
-                {isSubmitting ? "Sending..." : "Send Message"}
+            <div className="text-center pt-4">
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                // Button: White background, Navy text, Navy hover/focus
+                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 focus-visible:ring-primary transition-colors duration-200 w-full md:w-auto px-8 py-3"
+               >
+                 {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </div>
           </form>

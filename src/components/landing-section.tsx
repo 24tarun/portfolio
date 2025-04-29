@@ -1,31 +1,44 @@
 import Image from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
 
 export function LandingSection() {
   return (
-    <section id="home" className="text-center py-16 md:py-24">
-      <div className="flex flex-col items-center space-y-6">
-        <div className="relative w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden shadow-lg border-4 border-primary">
+    <section id="home" className="relative text-center py-24 md:py-32 lg:py-40 bg-background overflow-hidden">
+      {/* Optional: Subtle background shapes/gradients if desired */}
+      {/* Example subtle gradient circle */}
+       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+         <div className="w-96 h-96 md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] bg-gradient-to-br from-blue-100/30 via-purple-100/20 to-transparent rounded-full blur-3xl opacity-50 animate-pulse-slow"></div>
+       </div>
+
+      <div className="container mx-auto px-4 relative z-10 flex flex-col items-center space-y-8">
+        {/* Headline */}
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight leading-tight max-w-3xl">
+          Hi, I’m <span className="text-primary">Tarun</span>. I use this website as a portfolio and to showcase my projects.
+        </h1>
+        {/* Sub-headline/description */}
+        <p className="text-lg md:text-xl text-foreground/80 max-w-xl">
+           Click around and find out more about my work.
+        </p>
+
+        {/* Profile Image */}
+        <div className="relative w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden shadow-xl border-4 border-background mt-12">
           <Image
-            src="https://picsum.photos/200/200" // Placeholder image
+            src="https://picsum.photos/300/300" // Placeholder image - use a larger one for better quality
             alt="Tarun - Profile Photo"
             layout="fill"
             objectFit="cover"
             priority // Load image early
+            className="scale-105 transform group-hover:scale-110 transition-transform duration-300 ease-in-out"
           />
+           {/* Optional: Inner glow or subtle effect */}
+           <div className="absolute inset-0 rounded-full ring-2 ring-primary/10 ring-inset"></div>
         </div>
-        <h1 className="text-3xl md:text-5xl font-bold text-primary tracking-tight leading-tight">
-          Hi, I’m Tarun.
-        </h1>
-        <Card className="max-w-2xl mx-auto bg-secondary shadow-md border-none">
-           <CardContent className="p-6">
-             <p className="text-lg md:text-xl text-secondary-foreground leading-relaxed">
-                I use this website as a portfolio and to showcase my projects. Click
-                around and find out.
-             </p>
-           </CardContent>
-        </Card>
       </div>
     </section>
   );
 }
+
+// Add animation to tailwind config if needed:
+// Add this inside extend: { ... } in tailwind.config.ts
+// animation: {
+//  'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+// }
