@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tarun's Trove",
+  title: "TarunHariharan",
   description: "Personal portfolio website for Tarun.",
 };
 

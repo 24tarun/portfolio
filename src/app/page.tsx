@@ -9,7 +9,7 @@ export default function Home() {
       <div className="max-w-3xl mx-auto space-y-6 md:space-y-8 w-full">
         {/* Headline */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-normal leading-normal text-foreground">
-          Hi, I'm Tarun Hariharan
+          Welcome! My name is Tarun Hariharan
         </h1>
 
         {/* Paragraph */}
