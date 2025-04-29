@@ -5,8 +5,9 @@ export function LandingSection() {
     <section id="home" className="relative text-center py-24 md:py-32 lg:py-40 bg-background overflow-hidden">
       {/* Optional: Subtle background shapes/gradients if desired */}
       {/* Example subtle gradient circle */}
+       {/* Removed animate-pulse-slow for a more subtle effect */}
        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-         <div className="w-96 h-96 md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] bg-gradient-to-br from-blue-100/30 via-purple-100/20 to-transparent rounded-full blur-3xl opacity-50 animate-pulse-slow"></div>
+         <div className="w-96 h-96 md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] bg-gradient-to-br from-blue-100/30 via-purple-100/20 to-transparent rounded-full blur-3xl opacity-50"></div>
        </div>
 
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center space-y-8">
@@ -24,7 +25,7 @@ export function LandingSection() {
         </p>
 
         {/* Profile Image */}
-        <div className="relative w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden shadow-xl border-4 border-background mt-12">
+        <div className="relative w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden shadow-xl border-4 border-background mt-12 group">
           <Image
             src="https://picsum.photos/300/300" // Placeholder image - use a larger one for better quality
             alt="Tarun - Profile Photo"
