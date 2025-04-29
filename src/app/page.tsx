@@ -16,11 +16,6 @@ export default function Home() {
           I'm currently a masters student at Saarland University. I use this website as a portfolio and also to host and test a few of my projects
         </p>
 
-        {/* Paragraph 2 - Use text-foreground/90 */}
-        <p className="text-lg md:text-xl text-foreground/90">
-          Below you will find some useful links
-        </p>
-
         {/* Links - Ensure links are white and hover state uses accent color */}
         <div className="flex items-center justify-center space-x-4 md:space-x-6 pt-4">
           <Link href="/resume.pdf" download="Tarun_Resume.pdf" className="text-sm text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="Download Resume">
