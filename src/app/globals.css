@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,11 +14,12 @@ html, body {
 /* Removed scroll-behavior: smooth; */
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans);
 }
 
 @layer base {
   :root {
+    --font-geist-sans: 'Google Sans', sans-serif;
     /* Updated light mode variables to reflect the dark navy/white theme */
     --background: 240 100% 10%; /* Dark Navy Blue */
     --foreground: 0 0% 98%; /* White */

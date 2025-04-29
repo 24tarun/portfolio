@@ -8,8 +8,8 @@ export default function Home() {
       {/* Centered content block with max-width, text defaults to left-aligned */}
       <div className="max-w-3xl mx-auto space-y-6 md:space-y-8 w-full">
         {/* Headline */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-foreground">
-          Welcome, My name is Tarun
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-normal leading-normal text-foreground">
+          Welcome, My name is Tarun Hariharan
         </h1>
 
         {/* Paragraph */}
@@ -47,30 +47,14 @@ export default function Home() {
             <span className="text-foreground/50 hidden md:inline">|</span> {/* Separator - hide on small screens */}
             {/* GitHub Link */}
             <Link href="https://github.com/24tarun/vocabnote" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="VocabNote GitHub Repository">
-              <Github className="h-4 w-4" /> GitHub Repo
+              <Github className="h-4 w-4" /> vocabnote
             </Link>
             <span className="text-foreground/50 hidden md:inline">|</span> {/* Separator - hide on small screens */}
             {/* Documentation Link */}
             <Link href="/vocabnote-docs.pdf" /* Update href to actual path */ download="VocabNote_Documentation.pdf" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="VocabNote Documentation">
-               <FileText className="h-4 w-4" /> Documentation
+               <FileText className="h-4 w-4" /> Docs
             </Link>
           </div>
-          {/* Add more project rows here following the same structure */}
-          {/* Example of a second project:
-          <div className="flex items-center justify-start space-x-4 md:space-x-6 text-sm flex-wrap">
-            <Link href="[Project Link]" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1">
-              [Project URL]
-            </Link>
-            <span className="text-foreground/50 hidden md:inline">|</span>
-            <Link href="[GitHub Repo Link]" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="Project 2 GitHub Repository">
-              <Github className="h-4 w-4" /> GitHub Repo
-            </Link>
-             <span className="text-foreground/50 hidden md:inline">|</span>
-             <Link href="[Docs Link]" download="[Docs Filename]" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="Project 2 Documentation">
-               <FileText className="h-4 w-4" /> Documentation
-            </Link>
-          </div>
-          */}
         </section>
       </div>
     </main>
