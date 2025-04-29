@@ -17,38 +17,36 @@ interface ProjectsSectionProps {
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
-    // Section now assumes a navy background from parent
-    <section id="projects" className="py-16 md:py-24 lg:py-32">
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-primary-foreground mb-12 md:mb-16">
+    // Reduced vertical padding
+    <section id="projects" className="py-8 md:py-12">
+      {/* Reduced heading size and margin */}
+      <h2 className="text-2xl md:text-3xl font-bold text-center text-primary-foreground mb-6 md:mb-8">
         My Projects
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
+      {/* Adjust grid columns for smaller screens if needed, reduced gap */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {projects.slice(0, 2).map((project, index) => ( // Display fewer projects or handle overflow
           <Card
             key={index}
-            // Card styling for Navy background: White card, Navy text
-            className="flex flex-col justify-between shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card text-card-foreground border-transparent" // Use card styles, remove explicit accent border
+            className="flex flex-col justify-between shadow-md hover:shadow-lg transition-shadow duration-300 bg-card text-card-foreground border-transparent h-full" // Ensure card takes full height of grid cell
            >
-             <CardHeader>
-               {/* Card title needs to be readable on white card */}
-               <CardTitle className="text-xl font-semibold text-primary">{project.title}</CardTitle>
-               {/* Description text needs to be readable on white card */}
-               <CardDescription className="text-muted-foreground pt-2">
+             <CardHeader className="pb-2"> {/* Reduced padding */}
+               <CardTitle className="text-lg font-semibold text-primary">{project.title}</CardTitle>
+               <CardDescription className="text-sm text-muted-foreground pt-1 line-clamp-3"> {/* Limit description lines */}
                  {project.description}
                </CardDescription>
              </CardHeader>
-             <CardFooter className="flex justify-start space-x-4 pt-4 mt-auto">
+             <CardFooter className="flex justify-start space-x-2 pt-2 mt-auto"> {/* Reduced spacing/padding */}
                {project.liveLink && (
                  <Button
                    variant="outline"
                    size="sm"
                    asChild
-                   // Button styling for white card: Navy outline/text
-                   className="text-primary border-primary hover:bg-primary/5 hover:text-primary transition-colors duration-200"
+                   className="text-primary border-primary hover:bg-primary/5 hover:text-primary transition-colors duration-200 text-xs" // Smaller text
                   >
                     <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Live Demo
+                      <ExternalLink className="mr-1 h-3 w-3" /> {/* Smaller icon */}
+                      Live
                     </Link>
                   </Button>
                )}
@@ -57,12 +55,11 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                    variant="outline"
                    size="sm"
                    asChild
-                   // Button styling for white card: Navy outline/text
-                   className="text-primary border-primary hover:bg-primary/5 hover:text-primary transition-colors duration-200"
+                   className="text-primary border-primary hover:bg-primary/5 hover:text-primary transition-colors duration-200 text-xs" // Smaller text
                   >
                     <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" />
-                      GitHub
+                      <Github className="mr-1 h-3 w-3" /> {/* Smaller icon */}
+                      Code
                     </Link>
                   </Button>
                )}
@@ -70,6 +67,15 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
            </Card>
         ))}
       </div>
+       {/* Consider adding a "View More" link if not all projects fit */}
+       {projects.length > 2 && (
+        <div className="text-center mt-6">
+            <Link href="#projects" className="text-sm text-primary-foreground/80 hover:underline">
+                {/* This link won't work without scroll, maybe change to a modal later */}
+                {/* View More Projects */}
+            </Link>
+        </div>
+       )}
     </section>
   );
 }

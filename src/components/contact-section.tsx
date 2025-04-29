@@ -77,32 +77,32 @@ export function ContactSection() {
   }
 
   return (
-    // Section now assumes a navy background from parent
-    <section id="contact" className="py-16 md:py-24 lg:py-32">
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-primary-foreground mb-12 md:mb-16">
+    // Reduced vertical padding
+    <section id="contact" className="py-8 md:py-12">
+      {/* Reduced heading size and margin */}
+      <h2 className="text-2xl md:text-3xl font-bold text-center text-primary-foreground mb-6 md:mb-8">
         Get In Touch
       </h2>
-      <div className="max-w-xl mx-auto">
+      {/* Reduced max-width for smaller form */}
+      <div className="max-w-md mx-auto">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Reduced form spacing */}
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> {/* Reduced gap */}
               <FormField
                 control={form.control}
                 name="firstName"
                 render={({ field }) => (
                   <FormItem>
-                    {/* Label text should be white on navy background */}
-                    <FormLabel className="text-primary-foreground/80">First Name</FormLabel>
+                    <FormLabel className="text-primary-foreground/80 text-sm">First Name</FormLabel> {/* Smaller label */}
                     <FormControl>
-                      {/* Input: White background, Navy text, Navy ring on focus */}
                       <Input
                         placeholder="John"
                         {...field}
-                        className="bg-background text-foreground border-border focus:ring-primary"
+                        className="bg-background text-foreground border-border focus:ring-primary text-sm" // Smaller text
                       />
                     </FormControl>
-                    {/* Message styling should adapt, destructive variant handles error color */}
-                    <FormMessage />
+                    <FormMessage className="text-xs" /> {/* Smaller message */}
                   </FormItem>
                 )}
               />
@@ -111,15 +111,15 @@ export function ContactSection() {
                 name="lastName"
                 render={({ field }) => (
                   <FormItem>
-                     <FormLabel className="text-primary-foreground/80">Last Name</FormLabel>
+                     <FormLabel className="text-primary-foreground/80 text-sm">Last Name</FormLabel>
                     <FormControl>
                        <Input
                         placeholder="Doe"
                         {...field}
-                        className="bg-background text-foreground border-border focus:ring-primary"
+                        className="bg-background text-foreground border-border focus:ring-primary text-sm"
                        />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-xs" />
                   </FormItem>
                 )}
               />
@@ -129,16 +129,16 @@ export function ContactSection() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                   <FormLabel className="text-primary-foreground/80">Email Address</FormLabel>
+                   <FormLabel className="text-primary-foreground/80 text-sm">Email Address</FormLabel>
                   <FormControl>
                     <Input
                       type="email"
                       placeholder="john.doe@example.com"
                       {...field}
-                      className="bg-background text-foreground border-border focus:ring-primary"
+                      className="bg-background text-foreground border-border focus:ring-primary text-sm"
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-xs" />
                 </FormItem>
               )}
             />
@@ -147,25 +147,26 @@ export function ContactSection() {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                   <FormLabel className="text-primary-foreground/80">Message</FormLabel>
+                   <FormLabel className="text-primary-foreground/80 text-sm">Message</FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Your message here..."
                       {...field}
-                      rows={5}
-                      className="bg-background text-foreground border-border focus:ring-primary"
+                      rows={3} // Reduced rows
+                      className="bg-background text-foreground border-border focus:ring-primary text-sm"
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-xs" />
                 </FormItem>
               )}
             />
-            <div className="text-center pt-4">
+            {/* Reduced button padding/size */}
+            <div className="text-center pt-2">
               <Button
                 type="submit"
+                size="sm" // Smaller button size
                 disabled={isSubmitting}
-                // Button: White background, Navy text, Navy hover/focus
-                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 focus-visible:ring-primary transition-colors duration-200 w-full md:w-auto px-8 py-3"
+                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 focus-visible:ring-primary transition-colors duration-200 w-full md:w-auto px-6 py-2" // Adjusted padding
                >
                  {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
