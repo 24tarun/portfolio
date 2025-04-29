@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail, Download, Link as LinkIcon } from "lucide-react"; // Keep existing imports and add LinkIcon if needed
+import { Github, Linkedin, Mail, Download, FileText } from "lucide-react"; // Import FileText
 
 export default function Home() {
   return (
@@ -37,35 +37,37 @@ export default function Home() {
         <section className="mt-8 space-y-4">
           <h2 className="text-2xl font-semibold text-foreground">Current Projects</h2>
           {/* Project 1: VocabNote - Justify Start */}
-          <div className="flex items-center justify-start space-x-4 md:space-x-6 text-sm">
+          <div className="flex items-center justify-start space-x-4 md:space-x-6 text-sm flex-wrap"> {/* Added flex-wrap */}
             {/* Project Name/Link - Changed text to URL */}
             <Link href="https://vocabnote.onrender.com/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1">
                {/* Optionally add an icon like LinkIcon */}
                {/* <LinkIcon className="h-4 w-4" /> */}
                https://vocabnote.onrender.com/
             </Link>
-            <span className="text-foreground/50">|</span> {/* Separator */}
+            <span className="text-foreground/50 hidden md:inline">|</span> {/* Separator - hide on small screens */}
             {/* GitHub Link */}
-            <Link href="https://github.com/24tarun/vocabnote" /* Ensure this is the correct repo URL */ target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="VocabNote GitHub Repository">
+            <Link href="https://github.com/24tarun/vocabnote" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="VocabNote GitHub Repository">
               <Github className="h-4 w-4" /> GitHub Repo
             </Link>
-            {/* Documentation Link (Optional) - Kept commented */}
-            {/*
-            <span className="text-foreground/50">|</span> // Separator
-            <Link href="#" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="VocabNote Documentation">
+            <span className="text-foreground/50 hidden md:inline">|</span> {/* Separator - hide on small screens */}
+            {/* Documentation Link */}
+            <Link href="/vocabnote-docs.pdf" /* Update href to actual path */ download="VocabNote_Documentation.pdf" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="VocabNote Documentation">
                <FileText className="h-4 w-4" /> Documentation
             </Link>
-            */}
           </div>
           {/* Add more project rows here following the same structure */}
           {/* Example of a second project:
-          <div className="flex items-center justify-start space-x-4 md:space-x-6 text-sm">
+          <div className="flex items-center justify-start space-x-4 md:space-x-6 text-sm flex-wrap">
             <Link href="[Project Link]" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1">
               [Project URL]
             </Link>
-            <span className="text-foreground/50">|</span>
+            <span className="text-foreground/50 hidden md:inline">|</span>
             <Link href="[GitHub Repo Link]" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="Project 2 GitHub Repository">
               <Github className="h-4 w-4" /> GitHub Repo
+            </Link>
+             <span className="text-foreground/50 hidden md:inline">|</span>
+             <Link href="[Docs Link]" download="[Docs Filename]" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="Project 2 Documentation">
+               <FileText className="h-4 w-4" /> Documentation
             </Link>
           </div>
           */}
