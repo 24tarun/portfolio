@@ -5,9 +5,10 @@ import { Github, Linkedin, Mail, Download } from "lucide-react"; // Keep existin
 
 export default function Home() {
   return (
-    // Center content vertically and horizontally, take full screen height
-    <main className="flex flex-col items-center justify-center h-screen bg-background text-foreground p-4 md:p-8 text-center">
-      <div className="max-w-3xl mx-auto space-y-6 md:space-y-8">
+    // Center content vertically, allow block to center horizontally via mx-auto
+    <main className="flex flex-col justify-center min-h-screen bg-background text-foreground p-4 md:p-8">
+      {/* Centered content block with max-width, text defaults to left-aligned */}
+      <div className="max-w-3xl mx-auto space-y-6 md:space-y-8 w-full">
         {/* Headline */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-foreground">
           Welcome, My name is Tarun
@@ -18,8 +19,8 @@ export default function Home() {
           I'm currently a masters student at Saarland University. I use this website as a portfolio and also to host and test a few of my projects
         </p>
 
-        {/* Social/Contact Links */}
-        <div className="flex items-center justify-center space-x-4 md:space-x-6 pt-4">
+        {/* Social/Contact Links - Justify Start */}
+        <div className="flex items-center justify-start space-x-4 md:space-x-6 pt-4">
           <a href="/resume.pdf" download="Tarun_Resume.pdf" className="text-sm text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="Download Resume">
              <Download className="h-4 w-4" /> Resume
           </a>
@@ -34,11 +35,11 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Current Projects Section */}
+        {/* Current Projects Section - Left Aligned */}
         <section className="mt-8 space-y-4">
           <h2 className="text-2xl font-semibold text-foreground">Current Projects</h2>
-          {/* Project 1: VocabNote */}
-          <div className="flex items-center justify-center space-x-4 md:space-x-6 text-sm">
+          {/* Project 1: VocabNote - Justify Start */}
+          <div className="flex items-center justify-start space-x-4 md:space-x-6 text-sm">
             {/* Project Name/Link */}
             <Link href="https://vocabnote.onrender.com/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1">
               {/* Icon suggestion: <LinkIcon className="h-4 w-4" /> or <Globe className="h-4 w-4" /> */}
@@ -59,7 +60,7 @@ export default function Home() {
           </div>
           {/* Add more project rows here following the same structure */}
           {/* Example of a second project:
-          <div className="flex items-center justify-center space-x-4 md:space-x-6 text-sm">
+          <div className="flex items-center justify-start space-x-4 md:space-x-6 text-sm">
             <Link href="[Project Link]" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1">
               Project Name 2
             </Link>
