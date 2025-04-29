@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail, Download } from "lucide-react"; // Keep existing imports
-// Import FileText if adding documentation link in the future
-// import { Github, Linkedin, Mail, Download, FileText } from "lucide-react";
+import { Github, Linkedin, Mail, Download, Link as LinkIcon } from "lucide-react"; // Keep existing imports and add LinkIcon if needed
 
 export default function Home() {
   return (
@@ -40,17 +38,18 @@ export default function Home() {
           <h2 className="text-2xl font-semibold text-foreground">Current Projects</h2>
           {/* Project 1: VocabNote - Justify Start */}
           <div className="flex items-center justify-start space-x-4 md:space-x-6 text-sm">
-            {/* Project Name/Link */}
+            {/* Project Name/Link - Changed text to URL */}
             <Link href="https://vocabnote.onrender.com/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1">
-              {/* Icon suggestion: <LinkIcon className="h-4 w-4" /> or <Globe className="h-4 w-4" /> */}
-              VocabNote
+               {/* Optionally add an icon like LinkIcon */}
+               {/* <LinkIcon className="h-4 w-4" /> */}
+               https://vocabnote.onrender.com/
             </Link>
             <span className="text-foreground/50">|</span> {/* Separator */}
             {/* GitHub Link */}
             <Link href="https://github.com/24tarun/vocabnote" /* Ensure this is the correct repo URL */ target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="VocabNote GitHub Repository">
               <Github className="h-4 w-4" /> GitHub Repo
             </Link>
-            {/* Documentation Link (Optional) - Uncomment and add URL if needed */}
+            {/* Documentation Link (Optional) - Kept commented */}
             {/*
             <span className="text-foreground/50">|</span> // Separator
             <Link href="#" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="VocabNote Documentation">
@@ -62,7 +61,7 @@ export default function Home() {
           {/* Example of a second project:
           <div className="flex items-center justify-start space-x-4 md:space-x-6 text-sm">
             <Link href="[Project Link]" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1">
-              Project Name 2
+              [Project URL]
             </Link>
             <span className="text-foreground/50">|</span>
             <Link href="[GitHub Repo Link]" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="Project 2 GitHub Repository">
