@@ -39,10 +39,10 @@ export default function Home() {
           {/* Project 1: VocabNote - Justify Start */}
           <div className="flex items-center justify-start space-x-4 md:space-x-6 text-sm flex-wrap"> {/* Added flex-wrap */}
             {/* Project Name/Link - Changed text to URL */}
-            <Link href="https://vocabnote.onrender.com/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1">
+            <Link href="https://tarunsbeerreview.tarunh.com/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1">
                {/* Optionally add an icon like LinkIcon */}
                {/* <LinkIcon className="h-4 w-4" /> */}
-               https://vocabnote.onrender.com/
+               https://tarunsbeerreview.tarunh.com/
             </Link>
             <span className="text-foreground/50 hidden md:inline">|</span> {/* Separator - hide on small screens */}
             {/* GitHub Link */}
