@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  height: 100%;
+  /* Removed overflow-y: hidden; */
+  margin: 0;
+  padding: 0;
+}
+
+/* Removed scroll-behavior: smooth; */
+
+body {
+  font-family: var(--font-geist-sans);
+}
+
+@layer base {
+  :root {
+    --font-geist-sans: 'Google Sans', sans-serif;
+    /* Updated light mode variables to reflect the dark navy/white theme */
+    --background: 240 100% 10%; /* Dark Navy Blue */
+    --foreground: 0 0% 98%; /* White */
+    --card: 240 100% 15%; /* Slightly Lighter Dark Navy */
+    --card-foreground: 0 0% 98%; /* White */
+    --popover: 240 100% 10%; /* Dark Navy Blue */
+    --popover-foreground: 0 0% 98%; /* White */
+    --primary: 0 0% 98%; /* White (for primary elements like buttons/links) */
+    --primary-foreground: 240 100% 10%; /* Dark Navy Blue (for text on primary elements) */
+    --secondary: 240 3.7% 15.9%; /* Dark Gray/Navy */
+    --secondary-foreground: 0 0% 98%; /* White */
+    --muted: 240 3.7% 15.9%; /* Dark Gray/Navy */
+    --muted-foreground: 0 0% 62.8%; /* Lighter Gray */
+    --accent: 240 3.7% 25%; /* Slightly lighter navy for hover/accent */
+    --accent-foreground: 0 0% 98%; /* White */
+    --destructive: 0 62.8% 30.6%; /* Darker Red */
+    --destructive-foreground: 0 0% 98%; /* White */
+    --border: 240 3.7% 15.9%; /* Dark Gray/Navy */
+    --input: 240 3.7% 15.9%; /* Dark Gray/Navy */
+    --ring: 0 0% 98%; /* White Ring */
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.5rem;
+    /* Sidebar variables remain, but might need adjustments if sidebar is used */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Dark theme definition remains, but the default (:root) is now dark */
+  .dark {
+    --background: 240 100% 10%; /* Dark Navy Blue */
+    --foreground: 0 0% 98%; /* Very Light Gray/White */
+    --card: 240 100% 15%; /* Slightly Lighter Dark Navy */
+    --card-foreground: 0 0% 98%; /* White */
+    --popover: 240 100% 10%; /* Dark Navy Blue */
+    --popover-foreground: 0 0% 98%; /* White */
+    --primary: 0 0% 98%; /* White for Primary elements in dark mode */
+    --primary-foreground: 240 100% 10%; /* Dark Navy Blue for text on primary */
+    --secondary: 240 3.7% 15.9%; /* Dark Gray/Navy */
+    --secondary-foreground: 0 0% 98%; /* White */
+    --muted: 240 3.7% 15.9%; /* Dark Gray/Navy */
+    --muted-foreground: 0 0% 62.8%; /* Lighter Gray */
+    --accent: 240 3.7% 25%; /* Slightly lighter navy for hover/accent */
+    --accent-foreground: 0 0% 98%; /* White */
+    --destructive: 0 62.8% 30.6%; /* Darker Red */
+    --destructive-foreground: 0 0% 98%; /* White */
+    --border: 240 3.7% 15.9%; /* Dark Gray/Navy */
+    --input: 240 3.7% 15.9%; /* Dark Gray/Navy */
+    --ring: 0 0% 98%; /* White Ring */
+     --chart-1: 220 70% 50%;
+     --chart-2: 160 60% 45%;
+     --chart-3: 30 80% 55%;
+     --chart-4: 280 65% 60%;
+     --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    /* Apply the default background and foreground colors */
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Update selection colors to match the new theme */
+::selection {
+  background-color: hsl(var(--primary)); /* White selection background */
+  color: hsl(var(--primary-foreground)); /* Navy text selection */
+}
+::-moz-selection { /* Code for Firefox */
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
