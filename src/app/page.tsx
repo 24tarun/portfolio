@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, Download, FileText } from "lucide-react";
+import { Mail, Download } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Home() {
@@ -29,22 +29,12 @@ export default function Home() {
           </Link>
         </div>
 
-        <section className="mt-8 space-y-4">
-          <h2 className="text-2xl font-semibold text-foreground">Current Projects</h2>
-          <div className="flex items-center justify-start space-x-4 md:space-x-6 text-sm flex-wrap">
-            <Link href="https://tarunsbeerreview.tarunh.com/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1">
-              https://tarunsbeerreview.tarunh.com/
-            </Link>
-            <span className="text-foreground/50 hidden md:inline">|</span>
-            <Link href="https://github.com/24tarun/vocabnote" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="VocabNote GitHub Repository">
-              <FaGithub className="h-4 w-4" /> vocabnote
-            </Link>
-            <span className="text-foreground/50 hidden md:inline">|</span>
-            <Link href="/vocabnote-docs.pdf" download="VocabNote_Documentation.pdf" className="text-foreground hover:text-accent-foreground transition-colors flex items-center gap-1" aria-label="VocabNote Documentation">
-              <FileText className="h-4 w-4" /> Docs
-            </Link>
-          </div>
-        </section>
+        <div className="mt-8 space-y-4">
+          <h2 className="text-2xl font-semibold text-foreground">Check out my projects</h2>
+          <a href="https://tarunsbeerreview.tarunh.com/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors underline block mt-2">
+            tarunsbeerreview.tarunh.com
+          </a>
+        </div>
       </div>
     </main>
   );
