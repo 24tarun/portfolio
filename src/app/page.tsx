@@ -34,6 +34,9 @@ export default function Home() {
           <a href="https://tarunsbeerreview.tarunh.com/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors underline block mt-2">
             tarunsbeerreview.tarunh.com
           </a>
+          <a href="https://tas.tarunh.com/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent-foreground transition-colors underline block">
+            tas.tarunh.com
+          </a>
         </div>
       </div>
     </main>
