@@ -7,7 +7,7 @@ export default function Home() {
     <main className="flex flex-col justify-center min-h-screen bg-background text-foreground p-4 md:p-8">
       <div className="max-w-3xl mx-auto space-y-6 md:space-y-8 w-full">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-normal leading-normal text-foreground">
-          Welcome! My name is Tarun Hariharan
+          Hello! My name is Tarun Hariharan
         </h1>
 
         <p className="text-lg md:text-xl text-foreground/90">
